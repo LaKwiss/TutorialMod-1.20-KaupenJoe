@@ -1,11 +1,12 @@
 package net.lesuisse.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.lesuisse.tutorialmod.block.ModBlocks;
 import net.lesuisse.tutorialmod.item.ModCreativeModTabs;
 import net.lesuisse.tutorialmod.item.ModItems;
+import net.lesuisse.tutorialmod.menu.ShopGUI;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.CreativeModeTabRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -33,6 +34,8 @@ public class TutorialMod
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ShopGUI.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);
